@@ -86,17 +86,13 @@ void randomArray(T (& arr)[n]) {
     std::mt19937 rng(dev());
 
 	// Generate distribution in range [0, 100]
-	if (std::is_same<T, int>::value) {
-		static std::uniform_int_distribution<> dist100(0, 100);
-		for(int i = 0; i <= n; ++i)
-			arr[i] = dist100(rng);
-	} else if (std::is_same<T, char>::value) {
+	if (std::is_same<T, char>::value) {
 		static std::uniform_int_distribution<> dist26(0, 26);
-		for(int i = 0; i <= n; ++i)
+		for(int i = 0; i < n; ++i)
 			arr[i] = 'a' + dist26(rng);
 	} else {
 		static std::uniform_real_distribution<> dist100(0, 100);
-		for(int i = 0; i <= n; ++i)
+		for(int i = 0; i < n; ++i)
 			arr[i] = dist100(rng);
 	}
 }
