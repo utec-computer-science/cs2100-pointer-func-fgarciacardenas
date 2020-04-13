@@ -83,11 +83,11 @@ template<typename T, size_t n>
 void randomArray(T (& arr)[n]) {
 	// Generate random seed
 	std::random_device dev;
-    std::mt19937 rng(dev());
+	std::mt19937 rng(dev());
 
 	// Generate distribution in range [0, 100]
 	if (std::is_same<T, char>::value) {
-		static std::uniform_int_distribution<> dist26(0, 26);
+		static std::uniform_int_distribution<> dist26(0, 25);
 		for(int i = 0; i < n; ++i)
 			arr[i] = 'a' + dist26(rng);
 	} else {
