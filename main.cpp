@@ -9,39 +9,67 @@ void * bubbleSort(void * arr, void (*ptrFunc) (void *, int _i, int _k), int n) {
 }
 
 void typeInt(void * _vector_, int _i,int _k) {
-	if (((int *)_vector_)[_k] < ((int *)_vector_)[_i]) {
+	// Cast vector as an int array
+	int *v = (int *)_vector_;
+	
+	// BubbleSort conditional
+	if (v[_k] < v[_i]) {
         // Swap elements
-        int temp = ((int *)_vector_)[_i];
-        ((int *)_vector_)[_i] = ((int *)_vector_)[_k];
-        ((int *)_vector_)[_k] = temp;
+        int temp = v[_i];
+        v[_i] = v[_k];
+        v[_k] = temp;
     }
+
+	// Return changes to original vector
+	_vector_ = v;
 }
 
 void typeFloat(void * _vector_, int _i,int _k) {
-	if (((float *)_vector_)[_k] < ((float *)_vector_)[_i]) {
+	// Cast vector as an float array
+	float *v = (float *)_vector_;
+	
+	// BubbleSort conditional
+	if (v[_k] < v[_i]) {
         // Swap elements
-        float temp = ((float *)_vector_)[_i];
-        ((float *)_vector_)[_i] = ((float *)_vector_)[_k];
-        ((float *)_vector_)[_k] = temp;
+        float temp = v[_i];
+        v[_i] = v[_k];
+        v[_k] = temp;
     }
+
+	// Return changes to original vector
+	_vector_ = v;
 }
 
 void typeDouble(void * _vector_, int _i,int _k){
-	if (((double *)_vector_)[_k] < ((double *)_vector_)[_i]) {
+	// Cast vector as an float array
+	double *v = (double *)_vector_;
+	
+	// BubbleSort conditional
+	if (v[_k] < v[_i]) {
         // Swap elements
-        double temp = ((double *)_vector_)[_i];
-        ((double *)_vector_)[_i] = ((double *)_vector_)[_k];
-        ((double *)_vector_)[_k] = temp;
+        double temp = v[_i];
+        v[_i] = v[_k];
+        v[_k] = temp;
     }
+
+	// Return changes to original vector
+	_vector_ = v;
 }
 
 void typeChar(void * _vector_, int _i,int _k){
-	if (((char *)_vector_)[_k] < ((char *)_vector_)[_i]) {
+	// Cast vector as an float array
+	char *v = (char *)_vector_;
+	
+	// BubbleSort conditional
+	if (v[_k] < v[_i]) {
         // Swap elements
-        char temp = ((char *)_vector_)[_i];
-        ((char *)_vector_)[_i] = ((char *)_vector_)[_k];
-        ((char *)_vector_)[_k] = temp;
+        char temp = v[_i];
+        v[_i] = v[_k];
+        v[_k] = temp;
     }
+
+	// Return changes to original vector
+	_vector_ = v;
 }
 
 template<typename T, size_t n>
